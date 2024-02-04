@@ -1,13 +1,10 @@
-# MIUI-debloater
-
-### Note
-As soon as Hyper OS is available worldwidely, I will update the program accordingly to work with Hyper OS
+# HyperOS-debloater
 
 ### About
 This is a simple script, written in Python, which is supposed to safely remove bloatware from Xiaomi MIUI ROM using `adb`.
 
 ### Important notice
-I do not assume responsibility for any side effects resulting from the app. While it is designed to perform all functions safely and enables the removal of only a minimal portion of packages generally recognized as safe to delete, I cannot guarantee how a device will respond. Tested on MIUI 14 (Xiaomi Mi 11 Lite 5G, Xiaomi Redmi Note 12 Pro+ 5G).
+I do not assume responsibility for any side effects resulting from the app. While it is designed to perform all functions safely and enables the removal of only a minimal portion of packages generally recognized as safe to delete, I cannot guarantee how a device will respond.
 
 ### Microsoft Defender finding threats in the app
 Microsoft Defender and a few other antivirus programs might mistakenly identify this app as a virus. It's important to note that this app is not a virus and you can look up the whole code in this repo. The potential cause for this false detection could be related to the app's use of ADB (Android Debug Bridge).
@@ -21,13 +18,13 @@ On Arch-based distros, you can install `adb` using `sudo pacman -S android-tools
 <br>
 On Windows, you'll have to manually download `adb` software and usb android drivers.
 
-#### Enabling usb debugging in MIUI
-To enable USB debugging in MIUI, firstly you have to enable developer options. To do that, go to settings > about phone and click 7 times on "MIUI version". Then, go back to the settings main page, and go to advanced settings. Scroll down, and you should see developer options. Open developer options, and scroll down to "USB debugging" option. Enable it.
+#### Enabling usb debugging in Hyper OS
+To enable USB debugging in Hyper OS, firstly you have to enable developer options. To do that, go to settings > about phone and click 7 times on "OS version". Then, go back to the settings main page, and go to advanced settings. Scroll down, and you should see developer options. Open developer options, and scroll down to "USB debugging" option. Enable it.
 
 ### Running
 
 #### Linux
-Just download the file from the releases page, run `./MIUI-debloater` on your Linux distro.
+Just download the file from the releases page, run `./hos-debloater` on your Linux distro.
 <br>
 WARNING! Don't run the file by doubleclicking it, since it won't start in CLI mode, and you won't be able to do anything, but the program will be running in the background.
 
