@@ -7,9 +7,9 @@ package_names = {
     "com.mi.globalbrowser": "Mi Browser",
     "com.xiaomi.glgm": "Xiaomi Game Center",
     "com.android.mms": "Xiaomi SMS app",
-	"com.xiaomi.mipicks" : "GetApps App Mall",
-	"com.mi.globalminusscreen" : "Info-Assistent",
-	"com.miui.miservice" : "Miservice"
+    "com.xiaomi.mipicks" : "GetApps App Mall",
+    "com.mi.globalminusscreen" : "Info-Assistent",
+    "com.miui.miservice" : "Miservice"
 }
 
 def check_adb_exists():
