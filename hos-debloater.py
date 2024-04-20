@@ -1,15 +1,37 @@
 from subprocess import run
 from sys import exit
+import json
+import os
 
-package_names = {
-    "com.miui.player": "Mi Music",
-    "com.miui.videoplayer": "Mi Video",
-    "com.mi.globalbrowser": "Mi Browser",
-    "com.xiaomi.glgm": "Xiaomi Game Center",
-    "com.android.mms": "Xiaomi SMS app",
-    "com.xiaomi.mipicks": "App Mall",
-    "com.mi.globalminusscreen": "App Vault"
-}
+def load_package_names_from_config():
+    try:
+        with open('config.json', 'r') as config_file:
+            config = json.load(config_file)
+            return config['package_names']
+    except json.JSONDecodeError as e:
+        print(f"Error loading config.json: {e}")
+        exit()
+
+def create_default_config():
+    default_config = {
+        "package_names": {
+            "com.miui.player": "Mi Music",
+            "com.miui.videoplayer": "Mi Video",
+            "com.mi.globalbrowser": "Mi Browser",
+            "com.xiaomi.glgm": "Xiaomi Game Center",
+            "com.android.mms": "Xiaomi SMS app",
+            "com.xiaomi.mipicks": "App Mall",
+            "com.mi.globalminusscreen": "App Vault"
+        }
+    }
+    with open('config.json', 'w') as config_file:
+        json.dump(default_config, config_file, indent=4)
+    print("Default config file 'config.json' created.")
+    exit()
+
+def setup_config():
+    package_names = load_package_names_from_config()
+    return package_names
 
 def check_adb_exists():
     try:
@@ -31,7 +53,7 @@ def check_devices_connected():
 def uninstall_app(package_id):
     package_name = package_names.get(package_id, package_id)
     while True:
-        response = input(f"Do you wanna uninstall {package_name}? [Y/n] ")
+        response = input(f"Do you want to uninstall {package_name}? [Y/n] ")
         if response == '' or response.lower() == 'y':
             print(f"Uninstalling {package_name}...")
             run(['adb', 'shell', 'pm', 'uninstall', '--user', '0', package_id])
@@ -41,6 +63,11 @@ def uninstall_app(package_id):
             break
         else:
             print("Invalid input")
+
+if not os.path.exists('config.json'):
+    create_default_config()
+
+package_names = setup_config()
 
 try:
     if not check_adb_exists():
