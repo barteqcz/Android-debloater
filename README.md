@@ -18,6 +18,7 @@ On Arch-based distros, you can install `adb` using `sudo pacman -S android-tools
 <br>
 On Windows, you'll have to manually download `adb` software and usb android drivers.
 <br>
+
 While running the script for the first time, it will create the config.json file. you can modify the file, to include as much packages as you want.
 
 #### Enabling usb debugging in Hyper OS
