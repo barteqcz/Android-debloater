@@ -17,6 +17,8 @@ On Debian-based distros, you can install `adb` using `sudo apt install adb`.
 On Arch-based distros, you can install `adb` using `sudo pacman -S android-tools`
 <br>
 On Windows, you'll have to manually download `adb` software and usb android drivers.
+<br>
+While running the script for the first time, it will create the config.json file. you can modify the file, to include as much packages as you want.
 
 #### Enabling usb debugging in Hyper OS
 To enable USB debugging in Hyper OS, firstly you have to enable developer options. To do that, go to settings > about phone and click 7 times on "OS version". Then, go back to the settings main page, and go to advanced settings. Scroll down, and you should see developer options. Open developer options, and scroll down to "USB debugging" option. Enable it.
