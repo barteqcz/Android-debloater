@@ -1,4 +1,4 @@
-# HyperOS-debloater
+# Android-debloater
 
 ### About
 This is a simple script, written in Python, which is supposed to safely remove bloatware from Android `adb`.
