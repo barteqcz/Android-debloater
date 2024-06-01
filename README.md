@@ -1,7 +1,7 @@
 # Android-debloater
 
 ### About
-This is a simple script, written in Python, which is supposed to safely remove bloatware from Android `adb`.
+This is a simple script, written in Python, which is supposed to safely remove bloatware from Android using `adb`.
 
 ### Important notice
 I do not assume responsibility for any side effects resulting from the app. While it is designed to perform all functions safely and enables the removal of only a minimal portion of packages generally recognized as safe to delete, I cannot guarantee how a device will respond.
