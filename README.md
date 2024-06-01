@@ -1,7 +1,7 @@
 # HyperOS-debloater
 
 ### About
-This is a simple script, written in Python, which is supposed to safely remove bloatware from Xiaomi's HyperOS ROM using `adb`.
+This is a simple script, written in Python, which is supposed to safely remove bloatware from Android `adb`.
 
 ### Important notice
 I do not assume responsibility for any side effects resulting from the app. While it is designed to perform all functions safely and enables the removal of only a minimal portion of packages generally recognized as safe to delete, I cannot guarantee how a device will respond.
@@ -22,12 +22,12 @@ On Windows, you'll have to manually download `adb` software and usb android driv
 While running the script for the first time, it will create the `config.json` file. you can modify the file, to include as many packages as you want.
 
 #### Enabling usb debugging in Hyper OS
-To enable USB debugging in Hyper OS, firstly you have to enable developer options. To do that, go to settings > about phone and click 7 times on "OS version". Then, go back to the settings main page, and go to advanced settings. Scroll down, and you should see developer options. Open developer options, and scroll down to "USB debugging" option. Enable it.
+To enable USB debugging, firstly you have to enable developer options. To do that, go to settings > about phone and click 7 times on "OS version". Then, go back to the settings main page, and go to advanced settings. Scroll down, and you should see developer options. Open developer options, and scroll down to "USB debugging" option. Enable it.
 
 ### Running
 
 #### Linux
-Just download the file from the releases page, run `./hos-debloater` on your Linux distro.
+Just download the file from the releases page, run `./debloater` on your Linux distro.
 <br>
 WARNING! Don't run the file by doubleclicking it, since it won't start in CLI mode, and you won't be able to do anything, but the program will be running in the background.
 
