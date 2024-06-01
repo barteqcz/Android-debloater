@@ -27,6 +27,7 @@ def create_default_config():
     with open('config.json', 'w') as config_file:
         json.dump(default_config, config_file, indent=4)
     print("Default config file 'config.json' created.")
+    input("Press Enter to exit...")
     exit()
 
 def setup_config():
@@ -66,9 +67,6 @@ def uninstall_app(package_id):
 
 if not os.path.exists('config.json'):
     create_default_config()
-    print("Default configuration file has been generated. Edit it to decide which packages will be disabled.")
-    input("Press Enter to exit...")
-    exit()
 
 package_names = setup_config()
 
