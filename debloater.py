@@ -66,6 +66,9 @@ def uninstall_app(package_id):
 
 if not os.path.exists('config.json'):
     create_default_config()
+    print("Default configuration file has been generated. Edit it to decide which packages will be disabled.")
+    input("Press Enter to exit...")
+    exit()
 
 package_names = setup_config()
 
