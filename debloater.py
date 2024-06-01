@@ -15,13 +15,13 @@ def load_package_names_from_config():
 def create_default_config():
     default_config = {
         "package_names": {
-            "com.miui.player": "Mi Music",
-            "com.miui.videoplayer": "Mi Video",
-            "com.mi.globalbrowser": "Mi Browser",
-            "com.xiaomi.glgm": "Xiaomi Game Center",
-            "com.android.mms": "Xiaomi SMS app",
-            "com.xiaomi.mipicks": "App Mall",
-            "com.mi.globalminusscreen": "App Vault"
+            "com.android.chrome": "Google Chrome",
+            "com.google.android.youtube": "YouTube",
+            "com.google.android.apps.subscriptions.red": "Google One",
+            "com.google.android.apps.tachyon": "Google Duo",
+            "com.google.android.gm": "Gmail",
+            "com.google.android.apps.photos": "Google Photos",
+            "com.google.android.apps.maps": "Google Maps"
         }
     }
     with open('config.json', 'w') as config_file:
