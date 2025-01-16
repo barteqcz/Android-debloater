@@ -1,0 +1,47 @@
+name: Build and publish executables for Windows and Linux
+
+on:
+  push:
+    tags:
+      - 'v*'
+  release:
+    types: [created]
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        python-version: [3.x]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install dependencies
+        run: pip install --upgrade pip pyinstaller
+
+      - name: Compile .py file
+        run: |
+          if [ "${{ matrix.os }}" == "ubuntu-latest" ]; then
+            pyinstaller --onefile --name debloater_linux debloater.py
+          else
+            pyinstaller --onefile --name debloater_windows debloater.py
+          fi
+        shell: bash
+
+      - name: Create Release
+        id: create_release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            dist/debloater_${{ matrix.os == 'windows-latest' && 'windows.exe' || 'linux' }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
