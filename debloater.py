@@ -26,7 +26,7 @@ def create_default_config():
     }
     with open('config.json', 'w') as config_file:
         json.dump(default_config, config_file, indent=4)
-    print("Default config file 'config.json' created.")
+    print("Default config file 'config.json' created. Edit it to adjust it to your needs.")
     input("Press Enter to exit...")
     exit()
 
